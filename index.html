@@ -16,6 +16,7 @@
         background: rgba(255, 255, 255, 0.75);
         border-color: rgba(255, 255, 255, 0.75);
         color:#e55c4e;
+        border-radius:22px;
     }
     .btn-chihuo:hover, .btn-chihuo:active, .btn-chihuo:focus, .btn-chihuo:visited{
         background: #fff;
@@ -24,7 +25,7 @@
     }
 
     .white-bg{
-        background: #e55c4e;
+        background: transparent;
     }
     .title{
         padding-bottom: 40px;
@@ -46,7 +47,20 @@
         background: #e55c4e;
 
     }
-    
+    footer .shout-out {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+} 
+footer a{
+    color: rgb(245, 234, 234);
+}
+footer a:hover{
+    color: rgb(189, 171, 171);
+}
 </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -55,7 +69,6 @@
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="https://anijs.github.io/lib/anicollection/anicollection.css">
-    <script src="https://cdn.bootcss.com/AniJS/0.9.3/anijs-min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -64,9 +77,10 @@
             <div id="foodname" class="text-center">&nbsp;</div>
             <div id="des" class="text-center">&nbsp;</div>
             <p class="text-center">    
-                <button type="button" id="btn" onclick="randomfood()" data-anijs="if: click, do: swing animated, to: #btn" class="btn btn-lg btn-block btn-chihuo">选我选我选我！！</button>
+                <button type="button" id="btn" onclick="randomfood()" data-anijs="if: click, do: bounceInDown animated, to: #foodname;if: click, do: fadeInRightBig animated, to: #des" class="btn btn-lg btn-block btn-chihuo">选我选我选我！！</button>
             </p>
           </div>
+          <footer id="footer" class="content"><small class="shout-out">© 2017 Rythm Chen &nbsp;·&nbsp; Follow <a href="https://weibo.com/2186542113/profile?topnav=1&wvr=6">@陈陈陈1_嘉</a></small></footer>
     </div>
   
       
@@ -74,15 +88,21 @@
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/AniJS/0.9.3/anijs-min.js"></script>
+
 <script>
 var foods=[['烤冷面','多糖多醋'],['汉堡','不要沙拉酱'],['牛肉面','不要牛肉多放葱'],['中奖了！今天不吃饭！','减肥就喝水吧'],['重庆小面','多葱多醋'],
-['再来一次','Good Luck！'],['麻辣烫','加醋'],['猪蹄饭','多多猪蹄不怕胖'],['日式牛肉饭','好吃不腻再来一份！'],['麻辣香锅','少油少盐更健康'],['无敌螺蛳粉','办公室里的大魔王']];
+['再来一次','Good Luck！'],['麻辣烫','加醋'],['猪蹄饭','多多猪蹄不怕胖'],['日式牛肉饭','好吃不腻再来一份！'],['麻辣香锅','少油少盐更健康'],['无敌螺蛳粉','办公室里的大魔王'],
+['鸭血粉丝汤','今天加一份生煎包吧！'],['黄焖鸡','特辣加一份香菇吧！'],['寿司','多吃肉少吃米饭'],['龙虾饭','加辣多葱！！！'],['鲜榨果汁','减肥美容还好喝！'],
+['番茄鱼','多番茄多鱼哈哈！']];
+var colors=['#e55c4e','#6EB6E5','#FFDA72','#FF9672','#1F8DD6','#FBB44C','#2ABB9B','#68E9AB'];
 function randomfood(){
     var food=foods[Math.floor(Math.random()*foods.length)];
+    var color=colors[Math.floor(Math.random()*colors.length)];
     $('#foodname').text(food[0]);
     $('#des').text(food[1]);
-    $('#btn').text("今天就是你了！皮卡丘！");
-
+    $('#btn').text("今天就是你了，皮卡丘！");
+    $('body').css('background',color);
 }
 </script>  
 </body>
