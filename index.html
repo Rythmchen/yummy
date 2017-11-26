@@ -12,24 +12,41 @@
 <style>
 
     .btn-chihuo{
-        background: #e46084;
-        border-color: #e46084;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.75);
+        border-color: rgba(255, 255, 255, 0.75);
+        color:#e55c4e;
+    }
+    .btn-chihuo:hover, .btn-chihuo:active, .btn-chihuo:focus, .btn-chihuo:visited{
+        background: #fff;
+        border-color: #fff;
+        color:#e55c4e;
     }
 
     .white-bg{
-        background: #fff;
+        background: #e55c4e;
     }
     .title{
-        padding-bottom: 50px;
+        padding-bottom: 40px;
+        color: #ffffff !important;
+
     }
     #foodname{
         font-size: 60px;
         padding-bottom:30px;
+        color:#ffffff;
     }
     #des{
         font-size:30px;
         padding-bottom:30px;
+        color:#ffffff;
+        opacity: 0.7;
     }
+    body{
+        background: #e55c4e;
+
+    }
+    
 </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,6 +54,8 @@
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="https://anijs.github.io/lib/anicollection/anicollection.css">
+    <script src="https://cdn.bootcss.com/AniJS/0.9.3/anijs-min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -44,7 +63,8 @@
             <h1 class="text-center title">今天吃什么?</h1>
             <div id="foodname" class="text-center">&nbsp;</div>
             <div id="des" class="text-center">&nbsp;</div>
-            <p class="text-center">    <button type="button" onclick="randomfood()"  class="btn btn-success btn-lg btn-chihuo">吃我</button>
+            <p class="text-center">    
+                <button type="button" id="btn" onclick="randomfood()" data-anijs="if: click, do: swing animated, to: #btn" class="btn btn-success btn-lg btn-block btn-chihuo">选我选我选我！！</button>
             </p>
           </div>
     </div>
@@ -55,11 +75,12 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
-var foods=[['烤冷面','多糖多醋'],['汉堡','不要沙拉酱']];
+var foods=[['烤冷面','多糖多醋'],['汉堡','不要沙拉酱'],['牛肉面','不要牛肉多放葱'],['中奖了！今天不吃饭！','减肥就喝水吧'],['重庆小面','多葱多醋']];
 function randomfood(){
     var food=foods[Math.floor(Math.random()*foods.length)];
     $('#foodname').text(food[0]);
     $('#des').text(food[1]);
+    $('#btn').text("今天就是你了！皮卡丘！");
 
 }
 </script>  
