@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>猜猜你今天吃什么</title>
+
+    <!-- Bootstrap -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+
+    .btn-chihuo{
+        background: #e46084;
+        border-color: #e46084;
+    }
+
+    .white-bg{
+        background: #fff;
+    }
+    .title{
+        padding-bottom: 50px;
+    }
+    #foodname{
+        font-size: 60px;
+        padding-bottom:30px;
+    }
+    #des{
+        font-size:30px;
+        padding-bottom:30px;
+    }
+</style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+        <div class="jumbotron white-bg">
+            <h1 class="text-center title">今天吃什么?</h1>
+            <div id="foodname" class="text-center">&nbsp;</div>
+            <div id="des" class="text-center">&nbsp;</div>
+            <p class="text-center">    <button type="button" onclick="randomfood()"  class="btn btn-success btn-lg btn-chihuo">吃我</button>
+            </p>
+          </div>
+    </div>
+  
+      
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+var foods=[['烤冷面','多糖多醋'],['汉堡','不要沙拉酱']];
+function randomfood(){
+    var food=foods[Math.floor(Math.random()*foods.length)];
+    $('#foodname').text(food[0]);
+    $('#des').text(food[1]);
+
+}
+</script>  
+</body>
