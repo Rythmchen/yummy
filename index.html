@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>猜猜你今天吃什么</title>
+    <title>去吧！小火龙！</title>
 
     <!-- Bootstrap -->
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -64,7 +64,7 @@
             <div id="foodname" class="text-center">&nbsp;</div>
             <div id="des" class="text-center">&nbsp;</div>
             <p class="text-center">    
-                <button type="button" id="btn" onclick="randomfood()" data-anijs="if: click, do: swing animated, to: #btn" class="btn btn-success btn-lg btn-block btn-chihuo">选我选我选我！！</button>
+                <button type="button" id="btn" onclick="randomfood()" data-anijs="if: click, do: swing animated, to: #btn" class="btn btn-lg btn-block btn-chihuo">选我选我选我！！</button>
             </p>
           </div>
     </div>
@@ -75,7 +75,8 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
-var foods=[['烤冷面','多糖多醋'],['汉堡','不要沙拉酱'],['牛肉面','不要牛肉多放葱'],['中奖了！今天不吃饭！','减肥就喝水吧'],['重庆小面','多葱多醋']];
+var foods=[['烤冷面','多糖多醋'],['汉堡','不要沙拉酱'],['牛肉面','不要牛肉多放葱'],['中奖了！今天不吃饭！','减肥就喝水吧'],['重庆小面','多葱多醋'],
+['再来一次','Good Luck！'],['麻辣烫','加醋'],['猪蹄饭','多多猪蹄不怕胖'],['日式牛肉饭','好吃不腻再来一份！'],['麻辣香锅','少油少盐更健康'],['无敌螺蛳粉','办公室里的大魔王']];
 function randomfood(){
     var food=foods[Math.floor(Math.random()*foods.length)];
     $('#foodname').text(food[0]);
